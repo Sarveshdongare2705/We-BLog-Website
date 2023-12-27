@@ -1,0 +1,446 @@
+$lg : rgb(255, 133, 153);
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+.app{
+    display: flex;
+    justify-content: center;
+    .container{
+        width: 1024px;
+
+        .link{
+            text-decoration: none;
+            color: inherit;
+            font-size: 15px;
+        }
+
+        //login and register
+        .auth{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $lg;
+            height: 100vh;
+        }
+        h1{
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: y;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: white;
+            width: 240px;
+            gap: 20px;
+
+            input{
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid grey;
+            }
+            button{
+                padding: 10px;
+                width: 200px;
+                border: none;
+                background-color: yellow;
+                color: black;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+            }
+            button:hover{
+                background-color: black;
+                color: yellow;
+            }
+            p{
+                font-size: 12px;
+                color: red;
+            }
+        }
+
+
+        //Navbar
+        .navbar{
+            .container{
+                padding: 10px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .logo{
+                    img{
+                        width: 120px;
+                    }
+                }
+                .links{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 6px solid white;
+                        transition: 0.3s ease-in-out;
+                        image-rendering: auto;
+                        object-fit: cover;
+
+                    }
+                    img:hover{
+                        cursor: pointer;
+                        border: 6px solid $lg;
+                        margin-right: -10px;
+                    }
+
+                    h6{
+                        font-size: 15px;
+                        font-weight: bold;
+                        transition: 0.3s ease-in-out;
+                    }
+                    h6:hover{
+                        color: $lg;
+                    }
+
+                    span{
+                        cursor: pointer;
+                        border-bottom: 3px solid white;
+                        transition: 0.3s ease-in-out;
+                    }
+                    span:hover{
+                        border-bottom: 3px solid $lg;
+                    }
+                    
+                    .write{
+                        background-color: $lg;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 600;
+                        border: 1px solid white;
+                        transition: 0.3s ease-in-out;
+                    }
+                    .write:hover{
+                        background-color: white;
+                        color: $lg;
+                        border: 1px solid $lg;
+                    }
+                }
+            }
+        }
+
+        //FOOTER
+        footer{
+            margin-top: 100px;
+            padding: 20px;
+            background-color: $lg;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            img{
+                height: 50px;
+
+            }
+            a{
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+        }
+
+
+        //HOME
+        .home{
+
+            .posts{
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 150px;
+
+                .post{
+                    display: flex;
+                    gap: 100px;
+                    transition: 0.3s ease-in-out;
+
+                    &:nth-child(2n+1){
+                        flex-direction: row-reverse;
+                    }
+                    .img{
+                        flex:2;
+                        position: relative;
+
+                        &::after{
+                            content: "";
+                            width: 400px;
+                            height: 450px;
+                            background-color: $lg;
+                            position: absolute;
+                            top: 20px;
+                            left: -20px;
+                            z-index: -1;
+                        }
+
+                        img{
+                            width: 400px;
+                            height:450px;
+                            object-fit: cover;
+                        }
+                    }
+                    .content{
+                        flex: 3;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 4px solid black;
+
+                        }
+
+                        .flexed{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                        }
+
+                        h1{
+                            font-size: 42px;
+                        }
+                        p{
+                            font-size: 15px;
+                        }
+
+                        button{
+                            margin-top: 10px;
+                            width: max-content;
+                            padding: 10px;
+                            border: none;
+                            cursor: pointer;
+                            background-color: white;
+                            border: 2px solid $lg;
+                            color: $lg;
+                            transition: 0.3s ease-in-out;
+                            font-weight: bold;
+                        }
+
+                        button:hover{
+                            background-color: $lg;
+                            color: black;
+                        }
+                    }
+                }
+                .post:hover{
+                    transform: scale(1.01);
+                }
+            }
+        }
+
+        //SINLGE
+        .single{
+            display: flex;
+            gap: 50px;
+
+            .content{
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                img{
+                    width: 100%;
+                    height: 370px;
+                    object-fit: cover;
+                }
+                .user{
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                    img{
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    span{
+                        font-weight: bold;
+                    }
+
+                    .edit{
+                        display: flex;
+                        gap: 5px;
+
+                        img{
+                            width: 32px;
+                            height: 32px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                h1{
+                    font-size: 42px;
+                    color: rgb(43, 41, 41);
+                }
+                p{
+                    text-align: justify;
+                    line-height: 20px;
+                }
+                
+            }
+
+            .menu{
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                height: 1700px;
+                overflow: auto;
+                scrollbar-width: none;
+
+
+                h1{
+                    font-size: 18px;
+                    color: black;
+                }
+
+                .post{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    img{
+                        width: 100%;
+                        height: 180px;
+                        object-fit: cover;
+                    }
+
+                    h2{
+                        color: rgb(43, 41, 41);
+                        font-size: 17px;
+                    }
+                    button{
+                        width: max-content;
+                        padding: 10px;
+                        border: none;
+                        cursor: pointer;
+                        background-color: white;
+                        border: 2px solid $lg;
+                        color: $lg;
+                        transition: 0.3s ease-in-out;
+                        font-weight: bold;
+                    }
+
+                    button:hover{
+                        background-color: $lg;
+                        color: black;
+                    }
+                }
+            }
+        }
+        .menu::-webkit-scrollbar {
+            display: none;
+          }
+
+        //WRITE
+        .add{
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+
+            .content{
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                input{
+                    padding: 10px;
+                    border: 1px solid black;
+                }
+
+                .editorContainer{
+                    border: 1px solid black;
+                    height: 370px;
+
+                    .editor{
+                        height: 330px;
+                        border: none;
+                    }
+                }
+            }
+
+            .menu{
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .item{
+                    border: 1px solid black;
+                    padding: 10px;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 12px;
+                    gap: 2px;
+
+
+                    h1{
+                        font-size: 20px;
+                    }
+
+                    .buttons{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 25px;
+
+                        :first-child{
+                            cursor: pointer;
+                            color: $lg;
+                            background-color: white;
+                            border: 1px solid $lg;
+                            padding: 3px 5px; 
+                            transition: 0.3s ease-in-out;
+                        }
+                        :first-child:hover{
+                            color: black;
+                            background-color: $lg;
+                        }
+
+                        :last-child{
+                            cursor: pointer;
+                            color: black;
+                            background-color: $lg;
+                            border: 1px solid $lg;
+                            padding: 3px 5px;
+                            transition: 0.3s ease-in-out; 
+                        }
+                        :last-child:hover{
+                            color: $lg;
+                            background-color: white;
+                        }
+                    }
+
+                    .cat{
+                        color: $lg;
+                        font-weight: bold;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
